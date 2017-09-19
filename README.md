@@ -6,6 +6,10 @@
 
 > 基于Vue2.0的移动端图片上传组件
 
+## Demo
+
+[demo地址](http://static.djtest.cn/assets/other/vue2-img-upload-demo/index.html)
+
 ## 主要功能点
 - 移动端上传图片
 - 前端压缩
@@ -68,3 +72,7 @@ npm run build test
 
 # build for production and view the bundle analyzer report
 npm run build --report
+
+
+
+

@@ -5,20 +5,20 @@ var path = require('path')
 //[chunkhash] 被 chunk 的 hash 替换。
 //注意 src/assets 中的资源webpack会当做模块解析 static中的资源webpack只是简单的复制
 
-// 测试环境配置 
+// 测试环境配置
 // 注意！咱们测试环境实际上指的是打包编译部署到测试环境的文件，与vue-cli期待的测试环境(unit | e2e)不一样
 module.exports = {
   env: {
     NODE_ENV: '"test"' //输出的环境变量名
   },
   assetsRoot: path.resolve(__dirname, '../dist'), //webpack输出的目标文件夹路径,必须是本地文件系统上的绝对路径
-  assetsSubDirectory: 'static', //webpack编译输出的二级文件夹,假如build.assetsRoot参数是/path/to/dist，build.assetsSubDirectory 参数是 static, 那么所以webpack资源会被编译到path/to/dist/static目录
-  assetsPublicPath: '/', //webpack编译输出的线上发布路径,这个是通过http服务器运行的url路径,最终生成的路径会和assetsSubDirectory结合
-  filename: 'js/[name].[chunkhash].js', //编译输出js文件名格式
-  chunkFilename: 'js/[name].[chunkhash].js', //没有指定输出名的js文件输出的文件名格式
-  styleFilename: 'css/[name].[contenthash].css', //输出css文件名格式
-  imgname: 'img/[name].[hash:7].[ext]', // [src/assets/**/*] 中图片在文件中引入的名字以及生成在dist中的名字
-  fontname: 'fonts/[name].[hash:7].[ext]', // [src/assets/**/*] 字体文件在文件中引入的名字以及生成在dist中的名字
+  assetsSubDirectory: '', //webpack编译输出的二级文件夹,假如build.assetsRoot参数是/path/to/dist，build.assetsSubDirectory 参数是 static, 那么所以webpack资源会被编译到path/to/dist/static目录
+  assetsPublicPath: '//static.djtest.cn/assets/other/vue2-img-upload-demo/', //webpack编译输出的线上发布路径,这个是通过http服务器运行的url路径,最终生成的路径会和assetsSubDirectory结合
+  filename: 'js/[name].js', //编译输出js文件名格式
+  chunkFilename: 'js/[name].js', //没有指定输出名的js文件输出的文件名格式
+  styleFilename: 'css/[name].css', //输出css文件名格式
+  imgname: 'img/[name].[ext]', // [src/assets/**/*] 中图片在文件中引入的名字以及生成在dist中的名字
+  fontname: 'fonts/[name].[ext]', // [src/assets/**/*] 字体文件在文件中引入的名字以及生成在dist中的名字
   htmlMinify: { //编译生成html时的配置选项，详见https://github.com/kangax/html-minifier#options-quick-reference
     removeComments: true //移除html中注释
   },
