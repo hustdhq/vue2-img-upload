@@ -15,8 +15,8 @@
 
       <div class="evaluateUploadImg" @click="openUploadPop($event)" v-if="imagePreviewList.length < max">
         <span class="uploadIcon"></span>
-        <input type="file" class="uploadFile" accept="image/*" capture="camera" ref="upload"
-               @change="uploadImg" multiple="multiple">
+        <input v-if="isWx" type="file" class="uploadFile" accept="image/*" capture="camera" ref="upload" @change="uploadImg" multiple="multiple">
+        <input v-if="!isWx" type="file" class="uploadFile" accept="image/*" ref="upload" @change="uploadImg" multiple="multiple">
       </div>
     </div>
 
@@ -118,6 +118,7 @@
 
     data(){
       return {
+        isWx: navigator.userAgent.indexOf('MicroMessenger') >= 0,
         isSwiper: false,
         currSwiperIndex: 1
       }
