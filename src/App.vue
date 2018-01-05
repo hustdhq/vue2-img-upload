@@ -8,13 +8,16 @@
                 :max="9"
                 :url="url"
                 :extra-data="extraData"
-                :is-preview="true"></img-upload>
+                :is-preview="true"
+                :is-clip="true"
+                :clip-data="{width: 290,height: 290,rate: 3,background: '#fff'}"></img-upload>
     <!--<img-upload :image-preview-list="images2" :upload-cb="uploadCb" :max="9" url="http://www.baidu.com" :is-preview="true"></img-upload>-->
     <!--<img-upload :image-preview-list="images3" :upload-cb="uploadCb" :max="9" url="http://www.baidu.com" :is-preview="true"></img-upload>-->
 
     <p>后端接口地址：<input type="text" v-model="url"></p>
 
     <p>————————修改日志————————</p>
+    <p>2018-01-04：新增图片裁剪的功能(只支持单张上传)</p>
     <p>2017-09-19：优化onSuccess钩子，添加onError、onComplete、beforeUpload等钩子</p>
     <p>2017-09-19：修复连续选取同一文件时不触发onchange事件的bug</p>
     <p>2017-09-18：迁移至vue2.0</p>
@@ -33,7 +36,7 @@ export default {
   name: 'app',
   data() {
     return {
-      url: 'http://www.baidu.com',
+      url: 'https://comment-dop79.djtest.cn/comment/api/upload',
       images: [],
       images2: [],
       images3: [],
@@ -60,9 +63,10 @@ export default {
         }
       }
     }*/
+
     onSuccess(data, img, list) {
       if (data.code == 0) {
-
+          console.log(123)
       } else {
 //          return Promise.reject(data)
           return false
