@@ -15,6 +15,7 @@
     <p>后端接口地址：<input type="text" v-model="url"></p>
 
     <p>————————修改日志————————</p>
+    <p>2017-09-20：修复UC等浏览器上无法选择相册图片的bug</p>
     <p>2017-09-19：优化onSuccess钩子，添加onError、onComplete、beforeUpload等钩子</p>
     <p>2017-09-19：修复连续选取同一文件时不触发onchange事件的bug</p>
     <p>2017-09-18：迁移至vue2.0</p>

@@ -5,6 +5,7 @@ var vueLoaderConfig = require('./vue-loader.conf')
 var SpritesmithPlugin = require('webpack-spritesmith')
 var scssTemplate = require('./sprites/scss.js')
 var cssTemplate = require('./sprites/css.js')
+var PrerenderSpaPlugin = require('prerender-spa-plugin')
 var buildEnv = JSON.parse(process.env.npm_config_argv).remain[0] || 'test'
 var eslintRule = {
   test: /\.(js|vue)$/,
@@ -75,7 +76,9 @@ var webpackConfig = {
       }
     ]
   },
-  plugins: []
+  plugins: [
+
+  ]
 }
 
 // 配置sprite插件
